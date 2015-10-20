@@ -8,6 +8,9 @@
  *
  */
 
+// no direct access
+defined( '_JEXEC' ) or die( 'Restricted access' );
+
 abstract class modXpertContactHelper{
 
     public static function getAjax()
