@@ -19,6 +19,7 @@
 		<folder>form</folder>
 		<folder>tmpl</folder>
 		<filename>LICENSE</filename>
+		<filename>README.md</filename>
 		<filename>helper.php</filename>
 		<filename>mod_xpertcontact.xml</filename>
 	</files>
