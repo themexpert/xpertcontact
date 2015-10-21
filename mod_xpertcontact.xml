@@ -18,13 +18,14 @@
 		<folder>assets</folder>
 		<folder>form</folder>
 		<folder>tmpl</folder>
+		<filename>LICENSE</filename>
 		<filename>helper.php</filename>
 		<filename>mod_xpertcontact.xml</filename>
 	</files>
 
 	<!-- UPDATESERVER DEFINITION -->
     <updateservers>
-        <server type="extension" priority="1" name="Xpert Tweets Update">http://www.themexpert.com/ustreams/extensions/xpertcontact.xml</server>
+        <server type="extension" priority="1" name="Xpert Contact Update">http://www.themexpert.com/ustreams/extensions/xpertcontact.xml</server>
     </updateservers>
 
     <languages folder="language">
