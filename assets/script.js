@@ -11,7 +11,7 @@
 
     $(document).ready(function(){
         $('#xcon-form').submit(function() {
-           var value   = $(this).serializeArray(),
+           var value   = $(this).serializeArray();
            $.ajax({
                type   : 'POST',
                data   : value,
