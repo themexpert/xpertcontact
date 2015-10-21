@@ -26,7 +26,7 @@
     border-color: #e5473c;
 }
 #xcon-submit.loading{
-    background-image: url("../loader.gif");
+    background-image: url("loader.gif");
     background-repeat: no-repeat;
     background-position : 50% 50%;
     text-indent: -99999px;
