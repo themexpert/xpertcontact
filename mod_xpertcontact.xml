@@ -25,7 +25,7 @@
 
 	<!-- UPDATESERVER DEFINITION -->
     <updateservers>
-        <server type="extension" priority="1" name="Xpert Contact Update">http://www.themexpert.com/ustreams/extensions/xpertcontact.xml</server>
+        <server type="extension" priority="1" name="Xpert Contact Update">https://github.com/themexpert/xpertcontact/blob/master/mainfest.xml</server>
     </updateservers>
 
     <languages folder="language">
