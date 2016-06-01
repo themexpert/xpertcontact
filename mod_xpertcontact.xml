@@ -1,54 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension
-	type="module"
-	version="2.5"
-	client="site"
-	method="upgrade">
-	<name>Xpert Contact</name>
-	<author>ThemeXpert</author>
-	<creationDate>21/10/2015</creationDate>
-	<copyright>Copyright (C) 2011 - 2012 ThemeXpert. All rights reserved.</copyright>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<authorEmail>support@themexpert.com</authorEmail>
-	<authorUrl>www.themexpert.com</authorUrl>
-	<version>1.1.0</version>
-	<description>Xpert Contact - Ajax based contact module for Joomla!</description>
-	<files>
-		<filename module="mod_xpertcontact">mod_xpertcontact.php</filename>
-		<folder>assets</folder>
-		<folder>form</folder>
-		<folder>tmpl</folder>
-		<filename>LICENSE</filename>
-		<filename>README.md</filename>
-		<filename>helper.php</filename>
-		<filename>mod_xpertcontact.xml</filename>
-	</files>
-
-	<!-- UPDATESERVER DEFINITION -->
-    <updateservers>
-        <server type="extension" priority="1" name="Xpert Contact Update">https://github.com/themexpert/xpertcontact/blob/master/mainfest.xml</server>
-    </updateservers>
-
-    <languages folder="language">
-        <language tag="en-GB">en-GB.mod_xpertcontact.ini</language>
-   </languages>
-
-	<config>
-		<fields name="params">
-			<fieldset name="basic">
-
-				<field name="email_to" type="text" label="EMAIL_TO" description="EMAIL_TO_DESC" />
-
-				<field name="success_msg" type="text" default="Email sent successfully" label="SUCCESS_MSG" description="SUCCESS_MSG_DESC" />
-
-                <field name="failed_msg" type="text" default="Can't send email, please try again" label="FAILED_MSG" description="FAILED_MSG_DESC" />
-
-                <field name="captcha_enabled" type="radio" class="btn-group" default="1" label="Enabled Captcha" description="" >
-                    <option value="1">JYES</option>
-                    <option value="0">JNO</option>
-                </field>
-
-			</fieldset>
-		</fields>
-	</config>
+<extension type="module" version="2.5" client="site" method="upgrade">
+        <name>Xpert Contact</name>
+        <author>ThemeXpert</author>
+        <creationDate>21/10/2015</creationDate>
+        <copyright>Copyright (C) 2011 - 2012 ThemeXpert. All rights reserved.</copyright>
+        <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+        <authorEmail>support@themexpert.com</authorEmail>
+        <authorUrl>www.themexpert.com</authorUrl>
+        <version>1.1.1</version>
+        <description>Xpert Contact - Ajax based contact module for Joomla!</description>
+        <files>
+                <filename module="mod_xpertcontact">mod_xpertcontact.php</filename>
+                <folder>assets</folder>
+                <folder>form</folder>
+                <folder>tmpl</folder>
+                <filename>LICENSE</filename>
+                <filename>README.md</filename>
+                <filename>helper.php</filename>
+                <filename>mod_xpertcontact.xml</filename>
+        </files>
+        <!-- UPDATESERVER DEFINITION -->
+        <updateservers>
+                <server type="extension" priority="1" name="Xpert Contact Update">https://github.com/themexpert/xpertcontact/blob/master/mainfest.xml</server>
+        </updateservers>
+        <languages folder="language">
+                <language tag="en-GB">en-GB.mod_xpertcontact.ini</language>
+        </languages>
+        <config>
+                <fields name="params">
+                        <fieldset name="basic">
+                                <field name="enable_debug" type="radio" class="btn-group" default="0" label="Enabled Degub" description="">
+                                        <option value="1">JYES</option>
+                                        <option value="0">JNO</option>
+                                </field>
+                                <field name="email_to" type="text" label="EMAIL_TO" description="EMAIL_TO_DESC" />
+                                <field name="success_msg" type="text" default="Email sent successfully" label="SUCCESS_MSG" description="SUCCESS_MSG_DESC" />
+                                <field name="failed_msg" type="text" default="Can't send email, please try again" label="FAILED_MSG" description="FAILED_MSG_DESC" />
+                                <field name="captcha_enabled" type="radio" class="btn-group" default="1" label="Enabled Captcha" description="">
+                                        <option value="1">JYES</option>
+                                        <option value="0">JNO</option>
+                                </field>
+                        </fieldset>
+                </fields>
+        </config>
 </extension>
