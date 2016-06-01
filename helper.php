@@ -16,33 +16,33 @@ abstract class modXpertContactHelper{
     public static function getAjax()
     {
 
-		// Get module parameters
-		jimport('joomla.application.module.helper');
-		$input  = JFactory::getApplication()->input;
-		$module = JModuleHelper::getModule('xpertcontact');
-		$params = new JRegistry();
+	// Get module parameters
+	jimport('joomla.application.module.helper');
+	$input  = JFactory::getApplication()->input;
+	$module = JModuleHelper::getModule('xpertcontact');
+	$params = new JRegistry();
         $params->loadString($module->params);
 
         // Get the data
-        //$data = $input->get('data', array(), 'ARRAY');
         $data   = $input->get('jform', array(), 'array');
         $form = JForm::getInstance('customForm',dirname(__FILE__).'/form/form.xml',array('control' => 'jform'));
         $loadcaptcha = $params->get('captcha_enabled',0);
-        if($loadcaptcha){
-          $form->loadFile(dirname(__FILE__).'/form/form_captcha.xml', false);
+        if($loadcaptcha)
+        {
+        	$form->loadFile(dirname(__FILE__).'/form/form_captcha.xml', false);
         }
         $result = $form->validate($data);
 
         // Check for validation errors.
         if ($result === false)
         {
-          $return = '';
-          // Get the validation messages from the form.
-          foreach ($form->getErrors() as $message)
-          {
-            $return .= $message->getMessage();
-          }
-          return '<p class="xcon-failed"><i class="icon-remove-circle"></i> ' . $return . '</p>';
+		$return = '';
+		// Get the validation messages from the form.
+		foreach ($form->getErrors() as $message)
+		{
+			$return .= $message->getMessage();
+		}
+		return '<p class="xcon-failed"><i class="icon-remove-circle"></i> ' . $return . '</p>';
         }
 
         // Get the input value from data array
@@ -59,16 +59,22 @@ abstract class modXpertContactHelper{
         // Now send email
         $mail = JFactory::getMailer();
         $mail->addRecipient($recipient);
-        $mail->addReplyTo(array($email, $name));
+        $mail->addReplyTo($email, $name);
         $mail->setSender(array($email, $name));
         $mail->setSubject($subject);
         $mail->setBody($body);
-        $sent = $mail->Send();
+        $send = $mail->Send();
 
-        if( $sent === TRUE )
+        //return '<p class="xcon-success"><i class="icon-ok-circle"></i> ' . $success_msg . '</p>';
+        
+        if( $send === TRUE )
         {
-            return '<p class="xcon-success"><i class="icon-ok-circle"></i> ' . $success_msg . '</p>';
-        }else
-            return '<p class="xcon-failed"><i class="icon-remove-circle"></i> ' . $failed_msg . '</p>';
+        	return '<p class="xcon-success"><i class="icon-ok-circle"></i> ' . $success_msg . '</p>';
+        }
+        else
+        {
+		$enable_debug = $params->get('enable_debug', 0);
+		return '<p class="xcon-failed"><i class="icon-remove-circle"></i> ' . ($enable_debug ? JText::_('ERROR') .': '. $send->__toString() : $failed_msg) . '</p>';
+        }
     }
 }
