@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <updates>
-	<update>
-      <name>Xpert Contact</name>
-      <description>Xpert Contact Module Update</description>
-      <element>mod_xpertcontact</element>
-      <type>module</type>
-      <version>1.1.0</version>
-			<client>site</client>
-      <infourl title="Xpert Contact Module">https://github.com/themexpert/xpertcontact/releases/tag/1.1.0</infourl>
-      <downloads>
-          <downloadurl type="full" format="zip">https://github.com/themexpert/xpertcontact/releases/download/1.1.0/mod_xpertcontact_v1.1.0.zip</downloadurl>
-      </downloads>
-      <tags>
-          <tag>1.1.0</tag>
-      </tags>
-      <targetplatform name="joomla" version="3.0" />
-  </update>
+        <update>
+                <name>Xpert Contact</name>
+                <description>Xpert Contact Module Update</description>
+                <element>mod_xpertcontact</element>
+                <type>module</type>
+                <version>1.1.0</version>
+                <client>site</client>
+                <infourl title="Xpert Contact Module">https://github.com/themexpert/xpertcontact/releases/tag/1.1.0</infourl>
+                <downloads>
+                        <downloadurl type="full" format="zip">https://github.com/themexpert/xpertcontact/releases/download/1.1.0/mod_xpertcontact_v1.1.0.zip</downloadurl>
+                </downloads>
+                <tags>
+                        <tag>1.1.0</tag>
+                </tags>
+                <targetplatform name="joomla" version="3.0" />
+        </update>
+        <update>
+                <name>Xpert Contact</name>
+                <description>Xpert Contact Module Update</description>
+                <element>mod_xpertcontact</element>
+                <type>module</type>
+                <version>1.1.1</version>
+                <client>site</client>
+                <infourl title="Xpert Contact Module">https://github.com/themexpert/xpertcontact/releases/tag/1.1.1</infourl>
+                <downloads>
+                        <downloadurl type="full" format="zip">https://github.com/themexpert/xpertcontact/releases/download/1.1.1/mod_xpertcontact_v1.1.1.zip</downloadurl>
+                </downloads>
+                <tags>
+                        <tag>1.1.1</tag>
+                </tags>
+                <targetplatform name="joomla" version="3.0" />
+        </update>
 </updates>
