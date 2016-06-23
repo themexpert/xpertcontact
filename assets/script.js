@@ -24,6 +24,7 @@
                 success: function(response) {
                     $('#xcon-msg').fadeOut().html(response).fadeIn().delay(2000);
                     $('#xcon-submit').removeClass('loading');
+                    $('#xcon-form').find("input[type=text], input[type=email], textarea").val("");
                 }
             });
             return false;
