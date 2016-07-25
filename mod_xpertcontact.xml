@@ -21,7 +21,7 @@
         </files>
         <!-- UPDATESERVER DEFINITION -->
         <updateservers>
-                <server type="extension" priority="1" name="Xpert Contact Update">https://github.com/themexpert/xpertcontact/blob/master/mainfest.xml</server>
+                <server type="extension" priority="1" name="Xpert Contact Update">https://raw.githubusercontent.com/themexpert/xpertcontact/master/mainfest.xml</server>
         </updateservers>
         <languages folder="language">
                 <language tag="en-GB">en-GB.mod_xpertcontact.ini</language>
