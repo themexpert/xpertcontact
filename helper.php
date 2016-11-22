@@ -49,7 +49,10 @@ abstract class modXpertContactHelper{
         $name = $data['name'];
         $email = JStringPunycode::emailToPunycode($data['email']);
         $subject = $data['subject'];
-        $body = $data['body'];
+        $body = "Name : ". $name . "<br/>";
+        $body .= "Email : ". $email . "<br/>";
+        $body .= "Message : <br/>";
+        $body .= $data['body'];
 
         // Cache module params
         $recipient = $params->get('email_to');
@@ -60,16 +63,32 @@ abstract class modXpertContactHelper{
         $mail = JFactory::getMailer();
         $mail->addRecipient($recipient);
         $mail->addReplyTo($email, $name);
-        $mail->setSender(array($email, $name));
+        //$mail->setSender(array($email, $name));
+	        
+        // set sender
+        $config = JFactory::getConfig();
+        $sender = array( 
+            $config->get( 'mailfrom' ),
+            $config->get( 'fromname' ) 
+        );
+	    $mail->setSender($sender);
+	
         $mail->setSubject($subject);
         $mail->setBody($body);
+        
+        $mail->isHTML(true);
+	    $mail->Encoding = 'base64';
+        
         $send = $mail->Send();
 
         if ( $send !== true ) 
         {
-               $enable_debug = $params->get('enable_debug', 0);
+               $enable_debug = $params->get('enable_debug', 1);
                //TODO:: SHow error
-               return '<p class="xcon-failed"><i class="icon-remove-circle"></i> ' . $failed_msg . '</p>';
+               if($enable_debug){
+               	$failed_msg = $send->__toString();
+               }
+               return '<p class="xcon-failed"><i class="icon-remove-circle"></i> ' . $failed_msg. '</p>';
         }
         else
         {
